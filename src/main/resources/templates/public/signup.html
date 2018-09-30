@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html class="no-js" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" lang="en">
+<head data-th-replace="includes/publicheadTag :: publicheadTag">
+<!-- Meta tags -->
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta
+	content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'
+	name='viewport' />
+<meta name="viewport" content="width=device-width" />
+
+</head>
+
+<body>
+
+	<div class="col-md-6 col-md-offset-3 forgot-password">
+
+		<div id="signup">
+
+			<form id="recoverformsignup" name="signupform" th:action="@{/signup}"
+				th:object="${userVO}" method="post" class="form-vertical">
+				<div class="control-group normal_text">
+					<h3>
+						<img width="200px" th:src="@{/images/logo/logo.png}"
+							src="../images/logo/logo.png" />
+					</h3>
+				</div>
+				<div class="controls">
+					<div class="kv-avatar">
+						<div class="profile-loading">
+							<input id="avatar-2" name="avatar-2" type="file"
+								placeholder="upload photo">
+						</div>
+					</div>
+				</div>
+				<div class="controls">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="ti-user"></i></span> <input
+							th:field="*{fullName}" class="form-control" type="text" placeholder="FullName" />
+					</div>
+				</div>
+				<div class="controls">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="ti-user"></i></span> <input
+							th:field="*{userName}" class="form-control" type="text" placeholder="UserName " />
+					</div>
+				</div>
+				<div class="controls">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="ti-email"></i></span> <input
+							th:field="*{email}" class="form-control" type="text" placeholder="E-mail Address" />
+					</div>
+
+				</div>
+
+				<div class="controls">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="ti-lock"></i></span> <input
+						th:field="*{password}"	id="abcd" class="form-control" type="password"
+							placeholder="Password" />
+					</div>
+				</div>
+				<div class="controls">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="ti-lock"></i></span> <input
+						th:field="*{confirmPassword}"	class="form-control" type="password"
+							placeholder="ConfirmPassword" id="password" name="password" />
+					</div>
+				</div>
+				<div class="controls">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="ti-mobile"></i></span> <input
+							th:field="*{phoneNumber}" class="form-control" type="text" placeholder="PhoneNumber" />
+					</div>
+				</div>
+
+				<div class="form-actions">
+					<span class="pull-left"><a th:href="@{/login}"
+						class="flip-link btn btn-success" id="to-login-signup">&laquo;
+							Back to login</a></span> <span class="pull-right"><button
+							class="btn btn-info">
+							<i class="ti-loop"></i> Sign Up
+						</button></span>
+
+				</div>
+			</form>
+
+
+		</div>
+
+	</div>
+
+	<script>
+var btnCust = '<button type="button" class="btn btn-secondary" title="Add picture tags" ' + 
+    'onclick="alert(\'Call your custom code here.\')">' +
+    '<i class="glyphicon glyphicon-tag"></i>' +
+    '</button>'; 
+$("#avatar-2").fileinput({
+    overwriteInitial: true,
+    maxFileSize: 1500,
+    showClose: false,
+    showCaption: false,
+    showBrowse: false,
+    browseOnZoneClick: true,
+    removeLabel: '',
+    removeIcon: '<i class="glyphicon glyphicon-remove"></i>',
+    removeTitle: 'Cancel or reset changes',
+    elErrorContainer: '#kv-avatar-errors-2',
+    msgErrorClass: 'alert alert-block alert-danger',
+    defaultPreviewContent: '<img src="/uploads/default_avatar_male.jpg" alt="Your Avatar"><h6 class="text-muted">Click to select</h6>',
+    layoutTemplates: {main2: '{preview} ' +  btnCust + ' {remove} {browse}'},
+    allowedFileExtensions: ["jpg", "png", "gif"]
+});
+</script>
+
+</body>
+</html>

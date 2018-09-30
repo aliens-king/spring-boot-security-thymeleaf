@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<body>
+
+	<div th:fragment="errorDiv">
+		<div class="errors" th:classappend="${errors != null ? '' : 'hideSucessMsg' }" id="errors">
+			<p>Please correct the following errors:</p>
+			<ul>
+				<li th:if="${errors != null}" th:inline="text">Error</li>
+			</ul>
+		</div>
+	</div>
+	<div th:fragment="successDiv">
+	 <span th:text="${message}"></span>
+		<div class="successMsg" id="successMsg"
+			th:classappend="${message != null ? 'showSucessMsg' : 'hideSucessMsg' }">
+			<p th:inline="text">Success</p>
+		</div>
+	</div>
+	
+	<!-- <div th:fragment="errorDiv">
+	 	<div class="alert alert-danger" th:if="${errors}" id="errors">
+	            <button data-dismiss="alert" class="close close-sm" type="button">
+	                <i class="fa fa-times"></i>
+	            </button>            
+	            <span th:text="${errors}"></span>
+	     </div>
+	 </div>  
+	 <div th:fragment="successDiv">     
+       <div class="alert alert-success" th:if="${messages}" id="success">
+           <button data-dismiss="alert" class="close close-sm" type="button">
+               <i class="fa fa-times"></i>
+           </button>            
+           <span th:text="${messages}"></span>
+       </div>
+      </div>  -->
+	
+</body>
+</html>

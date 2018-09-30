@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<body>
+
+	<div layout:fragment="dashboardleftPanel">
+	
+            <div class="sidebar" data-background-color="white" data-active-color="danger">
+
+    <!--
+		Tip 1: you can change the color of the sidebar's background using: data-background-color="white | black"
+		Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
+	-->
+
+    	<div class="sidebar-wrapper">
+            <div class="logo">
+              
+                <a th:href="@{/}" class="simple-text">
+                   <img width="200px" th:src="@{/images/logo.png}" src = "../images/logo.png"/>
+                </a>
+            </div>
+
+            <ul class="nav">
+                <li id = "dashboard">
+                    <a th:href="@{/user/dashboard}">
+                        <i class="ti-panel"></i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+        
+      
+          
+                <li id = "transaction">
+                    <a th:href="@{/user/transaction}">
+                        <i class="ti-share"></i>
+                        <p>Transaction</p>
+                    </a>
+                </li>
+                <li id = "reports">
+                    <a th:href="@{/user/reports}">
+                        <i class="ti-layers-alt"></i>
+                        <p>Reports</p>
+                    </a>
+                </li>
+                <li id = "notifications">
+                    <a th:href="@{/user/notification}">
+                        <i class="ti-bell"></i>
+                        <p>Notifications</p>
+                    </a>
+                </li>
+                 <li id = "forum">
+                    <a th:href="@{/forum}">
+                        <i class="ti-layout-accordion-separated"></i>
+                        <p>Forum</p>
+                    </a>
+                </li>
+		
+            </ul>
+    	</div>
+    </div>
+          </div>
+	
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html class="no-js" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" lang="en">
+<head th:replace="includes/publicheadTag :: publicheadTag">
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta
+	content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'
+	name='viewport' />
+<meta name="viewport" content="width=device-width" />
+</head>
+<body>
+	<div id="loginbox">
+		<form id="loginform" class="form-vertical"
+			th:action="@{/login/authenticate}" method="POST">
+			<div class="control-group normal_text">
+				<h3>
+					<img width="200px" th:src="@{/images/logo/logo.png}"
+						src="../images/logo1.png" />
+				</h3>
+			</div>
+			<div class="control-group">
+				<div class="controls">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="ti-user"></i></span><input
+							type="text" class="form-control" placeholder="Email"
+							name="username" th:required="required" />
+					</div>
+				</div>
+			</div>
+			<div class="control-group">
+				<div class="controls">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="ti-lock"></i></span><input
+							class="form-control" type="password" placeholder="Password"
+							name="password" th:required="required" />
+					</div>
+				</div>
+			</div>
+			<div class="form-actions">
+				<span class="pull-left"><a th:href="@{/forgotpassword}"
+					class="flip-link btn btn-info" id="to-recovers">Lost password?</a></span>
+				<span class="pull-left"> &nbsp;&nbsp;<a th:href="@{/signup}"
+					class="flip-link btn btn-info" id="to-recoversigups"><i
+						class="ti-loop"></i> Sign Up</a></span> <span class="pull-right"><button
+						type="submit" class="btn btn-success">
+						<i class="ti-shift-right"></i> Login
+					</button></span>
+			</div>
+		</form>
+	</div>
+
+</body>
+</html>
